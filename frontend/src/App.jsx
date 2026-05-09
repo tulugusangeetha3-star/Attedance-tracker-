@@ -1,26 +1,23 @@
-import { Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
+import { Routes, Route } from "react-router-dom";
 
-import Dashboard from './pages/Dashboard';
-import Students from './pages/Students';
-import Marks from './pages/Marks';
-import Alerts from './pages/Alerts';
-
-function App() {
-  return (
-    <div style={{ display: 'flex' }}>
-      <Sidebar />
-
-      <div style={{ flex: 1, padding: '20px' }}>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/marks" element={<Marks />} />
-          <Route path="/alerts" element={<Alerts />} />
-        </Routes>
-      </div>
-    </div>
-  );
+function Dashboard() {
+  return <h1>Dashboard Page</h1>;
 }
 
-export default App;
+function Students() {
+  return <h1>Students Page</h1>;
+}
+
+function Alerts() {
+  return <h1>Alerts Page</h1>;
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/students" element={<Students />} />
+      <Route path="/alerts" element={<Alerts />} />
+    </Routes>
+  );
+}
