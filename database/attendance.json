@@ -1,0 +1,12 @@
+[
+  {
+    "student": "Rahul",
+    "date": "2026-05-09",
+    "status": "Present"
+  },
+  {
+    "student": "Priya",
+    "date": "2026-05-09",
+    "status": "Absent"
+  }
+]

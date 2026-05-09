@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul",
+    "rollNumber": "CSE001",
+    "email": "rahul@gmail.com",
+    "password": "123456",
+    "parentEmail": "rahulparent@gmail.com",
+    "attendance": 92,
+    "photo": "rahul.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Priya",
+    "rollNumber": "CSE002",
+    "email": "priya@gmail.com",
+    "password": "123456",
+    "parentEmail": "priyaparent@gmail.com",
+    "attendance": 88,
+    "photo": "priya.jpg"
+  }
+]

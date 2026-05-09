@@ -1,0 +1,16 @@
+body{
+  margin:0;
+  background:#020617;
+  color:white;
+  font-family:Arial;
+}
+
+.dashboard{
+  display:flex;
+  min-height:100vh;
+}
+
+.dashboard-content{
+  flex:1;
+  padding:20px;
+}

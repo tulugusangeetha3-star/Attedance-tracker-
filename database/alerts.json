@@ -1,0 +1,12 @@
+[
+  {
+    "type": "Email",
+    "message": "Rahul absent today",
+    "time": "10:20 AM"
+  },
+  {
+    "type": "SMS",
+    "message": "Priya scored low marks",
+    "time": "11:00 AM"
+  }
+]

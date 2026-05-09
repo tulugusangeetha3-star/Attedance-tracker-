@@ -1,0 +1,18 @@
+[
+  {
+    "student": "Rahul",
+    "math": 85,
+    "science": 90,
+    "english": 88,
+    "total": 263,
+    "percentage": 87
+  },
+  {
+    "student": "Priya",
+    "math": 78,
+    "science": 82,
+    "english": 85,
+    "total": 245,
+    "percentage": 81
+  }
+]
