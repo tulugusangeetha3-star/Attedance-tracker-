@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const multer = require('multer');
+import express from 'express';
+import cors from 'cors';
+import multer from 'multer';
 
 const app = express();
 
@@ -21,22 +21,6 @@ const upload = multer({ storage });
 
 app.get('/', (req, res) => {
   res.send('Backend Running');
-});
-
-app.get('/api/students', (req, res) => {
-  res.json([
-    {
-      id: 1,
-      name: 'Rahul',
-      attendance: '92%',
-    },
-
-    {
-      id: 2,
-      name: 'Priya',
-      attendance: '88%',
-    },
-  ]);
 });
 
 app.post('/upload', upload.single('photo'), (req, res) => {

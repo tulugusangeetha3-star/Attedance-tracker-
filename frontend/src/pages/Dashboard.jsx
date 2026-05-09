@@ -1,69 +1,47 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-
-import Sidebar from "../components/Sidebar";
-import TopCards from "../components/TopCards";
-import ScannerCard from "../components/ScannerCard";
-import LoginCards from "../components/LoginCards";
-import AttendanceTable from "../components/AttendanceTable";
-import DashboardLayout from "../layouts/DashboardLayout";
-
-import "./Dashboard.css";
-
-export default function Dashboard() {
-  const [students, setStudents] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://your-backend-url.onrender.com/api/students")
-      .then((res) => {
-        setStudents(res.data);
-      })
-      .catch((err) => {
-        console.log("Error fetching students:", err);
-      });
-  }, []);
-
+function Dashboard() {
   return (
-    <DashboardLayout>
-      <div className="dashboard">
+    <div>
+      <h1>AI Attendance Tracker Dashboard</h1>
 
-        <Sidebar />
+      <div style={{
+        display: 'flex',
+        gap: '20px',
+        marginTop: '20px'
+      }}>
 
-        <div className="dashboard-content">
+        <div style={{
+          padding: '20px',
+          background: '#2563eb',
+          color: 'white',
+          borderRadius: '10px'
+        }}>
+          <h2>Total Students</h2>
+          <h1>120</h1>
+        </div>
 
-          <TopCards />
+        <div style={{
+          padding: '20px',
+          background: '#16a34a',
+          color: 'white',
+          borderRadius: '10px'
+        }}>
+          <h2>Present Today</h2>
+          <h1>105</h1>
+        </div>
 
-          <LoginCards />
-
-          <ScannerCard />
-
-          <AttendanceTable />
-
-          <div className="students-section">
-            <h2>Student Attendance Data</h2>
-
-            {students.map((student, index) => (
-              <div className="student-card" key={index}>
-                <p>
-                  <strong>Name:</strong> {student.name}
-                </p>
-
-                <p>
-                  <strong>Attendance:</strong> {student.attendance}
-                </p>
-
-                <p>
-                  <strong>Marks:</strong> {student.marks}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
+        <div style={{
+          padding: '20px',
+          background: '#dc2626',
+          color: 'white',
+          borderRadius: '10px'
+        }}>
+          <h2>Absent Today</h2>
+          <h1>15</h1>
         </div>
 
       </div>
-    </DashboardLayout>
+    </div>
   );
 }
+
+export default Dashboard;

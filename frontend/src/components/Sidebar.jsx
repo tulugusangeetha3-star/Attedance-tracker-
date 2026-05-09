@@ -1,49 +1,126 @@
-const Sidebar = () => {
-  const menu = [
-    "Dashboard",
-    "Student Login",
-    "Teacher Login",
-    "Parent Login",
-    "Attendance Dashboard",
-    "Marks Dashboard",
-    "Fingerprint Attendance",
-    "Face Scan Attendance",
-    "College Location Tracking",
-    "Parent Alert System",
-    "AI Face Recognition",
-    "Admin Dashboard",
-    "Student Reports",
-  ];
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+function Sidebar() {
   return (
     <div
       style={{
-        width: "260px",
-        background: "#081028",
-        padding: "20px",
-        borderRight: "1px solid #1b2a52",
+        width: '250px',
+        height: '100vh',
+        background: '#111827',
+        color: 'white',
+        padding: '20px',
       }}
     >
-      <h2 style={{ color: "#4da3ff" }}>AI Attendance Tracker</h2>
+      <h2 style={{ marginBottom: '30px' }}>
+        AI Attendance Tracker
+      </h2>
 
-      <div style={{ marginTop: "30px" }}>
-        {menu.map((item, index) => (
-          <div
-            key={index}
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/"
             style={{
-              padding: "14px",
-              marginBottom: "10px",
-              background: "#0d1735",
-              borderRadius: "10px",
-              cursor: "pointer",
+              color: 'white',
+              textDecoration: 'none',
             }}
           >
-            {item}
-          </div>
-        ))}
+            Dashboard
+          </Link>
+        </li>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/face-attendance"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Face Attendance
+          </Link>
+        </li>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/students"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Students
+          </Link>
+        </li>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/marks"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Marks & Performance
+          </Link>
+        </li>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/alerts"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Alerts
+          </Link>
+        </li>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/reports"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Reports
+          </Link>
+        </li>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/profile"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Profile
+          </Link>
+        </li>
+
+        <li style={{ marginBottom: '20px' }}>
+          <Link
+            to="/settings"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Settings
+          </Link>
+        </li>
+
+      </ul>
+
+      <div style={{ marginTop: '50px', fontSize: '12px' }}>
+        Smart Campus Solution © 2025
       </div>
     </div>
   );
-};
+}
 
 export default Sidebar;
