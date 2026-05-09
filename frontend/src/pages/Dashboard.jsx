@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+import Sidebar from "../components/Sidebar";
+import TopCards from "../components/TopCards";
+import ScannerCard from "../components/ScannerCard";
+import LoginCards from "../components/LoginCards";
+import AttendanceTable from "../components/AttendanceTable";
+import DashboardLayout from "../layouts/DashboardLayout";
+
 import "./Dashboard.css";
 
-const Dashboard = () => {
+export default function Dashboard() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/students")
+      .get("https://your-backend-url.onrender.com/api/students")
       .then((res) => {
         setStudents(res.data);
       })
@@ -17,83 +25,45 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="dashboard-container">
-      
-      {/* Header */}
-      <div className="dashboard-header">
-        <h1>AI Attendance Tracker Dashboard</h1>
-      </div>
+    <DashboardLayout>
+      <div className="dashboard">
 
-      {/* Top Cards */}
-      <div className="top-cards">
-        <div className="card">
-          <h2>Total Students</h2>
-          <p>120</p>
-        </div>
+        <Sidebar />
 
-        <div className="card">
-          <h2>Present Today</h2>
-          <p className="present">105</p>
-        </div>
+        <div className="dashboard-content">
 
-        <div className="card">
-          <h2>Absent Today</h2>
-          <p className="absent">15</p>
-        </div>
-      </div>
+          <TopCards />
 
-      {/* Login Section */}
-      <div className="login-section">
-        
-        {/* Teacher Login */}
-        <div className="login-box">
-          <h2>Teacher Login</h2>
+          <LoginCards />
 
-          <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <ScannerCard />
 
-          <button>Login</button>
-        </div>
+          <AttendanceTable />
 
-        {/* Student Login */}
-        <div className="login-box">
-          <h2>Student Login</h2>
+          <div className="students-section">
+            <h2>Student Attendance Data</h2>
 
-          <input type="text" placeholder="Roll Number" />
-          <input type="password" placeholder="Password" />
+            {students.map((student, index) => (
+              <div className="student-card" key={index}>
+                <p>
+                  <strong>Name:</strong> {student.name}
+                </p>
 
-          <button>Login</button>
-        </div>
-      </div>
+                <p>
+                  <strong>Attendance:</strong> {student.attendance}
+                </p>
 
-      {/* AI Scanner */}
-      <div className="scanner-section">
-        <h2>AI Face Attendance Scanner</h2>
+                <p>
+                  <strong>Marks:</strong> {student.marks}
+                </p>
+              </div>
+            ))}
 
-        <div className="upload-box">
-          Upload Class Photo Here
-        </div>
-
-        <button className="scan-btn">
-          Scan Attendance
-        </button>
-      </div>
-
-      {/* Student Data */}
-      <div className="students-section">
-        <h2>Student Attendance Data</h2>
-
-        {students.map((student, index) => (
-          <div className="student-card" key={index}>
-            <p><strong>Name:</strong> {student.name}</p>
-            <p><strong>Roll:</strong> {student.roll}</p>
-            <p><strong>Attendance:</strong> {student.attendance}</p>
           </div>
-        ))}
+
+        </div>
+
       </div>
-
-    </div>
+    </DashboardLayout>
   );
-};
-
-export default Dashboard;
+}
