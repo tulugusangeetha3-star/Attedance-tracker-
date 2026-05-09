@@ -1,23 +1,33 @@
-function Alerts() {
+import Sidebar from "../components/Sidebar";
+
+export default function Alerts() {
   return (
-    <div>
-      <h1>Automatic Alerts</h1>
+    <div className="dashboard">
 
-      <ul>
-        <li>
-          SMS sent to Rahul
-        </li>
+      <Sidebar />
 
-        <li>
-          Alert sent to Sneha's parent
-        </li>
+      <div className="main-content">
 
-        <li>
-          Low attendance warning for Priya
-        </li>
-      </ul>
+        <div className="box">
+
+          <h2>Automatic Alerts</h2>
+
+          <div className="alert">
+            Email sent to Priya's parent
+          </div>
+
+          <div className="alert">
+            SMS sent to Rahul
+          </div>
+
+          <div className="alert">
+            Alert sent to Sneha's parent
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 }
-
-export default Alerts;

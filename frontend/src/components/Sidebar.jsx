@@ -1,126 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-function Sidebar() {
+export default function Sidebar() {
   return (
-    <div
-      style={{
-        width: '250px',
-        height: '100vh',
-        background: '#111827',
-        color: 'white',
-        padding: '20px',
-      }}
-    >
-      <h2 style={{ marginBottom: '30px' }}>
+
+    <div className="sidebar">
+
+      <div className="logo">
         AI Attendance Tracker
-      </h2>
-
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Dashboard
-          </Link>
-        </li>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/face-attendance"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Face Attendance
-          </Link>
-        </li>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/students"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Students
-          </Link>
-        </li>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/marks"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Marks & Performance
-          </Link>
-        </li>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/alerts"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Alerts
-          </Link>
-        </li>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/reports"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Reports
-          </Link>
-        </li>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/profile"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Profile
-          </Link>
-        </li>
-
-        <li style={{ marginBottom: '20px' }}>
-          <Link
-            to="/settings"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            Settings
-          </Link>
-        </li>
-
-      </ul>
-
-      <div style={{ marginTop: '50px', fontSize: '12px' }}>
-        Smart Campus Solution © 2025
       </div>
+
+      <div className="menu">
+
+        <Link to="/">
+          Dashboard
+        </Link>
+
+        <Link to="/attendance">
+          Face Attendance
+        </Link>
+
+        <Link to="/students">
+          Students
+        </Link>
+
+        <Link to="/marks">
+          Marks & Performance
+        </Link>
+
+        <Link to="/alerts">
+          Alerts
+        </Link>
+
+        <Link to="/reports">
+          Reports
+        </Link>
+
+        <Link to="/profile">
+          Profile
+        </Link>
+
+        <Link to="/settings">
+          Settings
+        </Link>
+
+      </div>
+
     </div>
+
   );
 }
-
-export default Sidebar;

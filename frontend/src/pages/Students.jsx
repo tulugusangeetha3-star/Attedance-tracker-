@@ -1,33 +1,49 @@
-function Students() {
+import Sidebar from "../components/Sidebar";
+
+export default function Students() {
   return (
-    <div>
-      <h1>Students Page</h1>
+    <div className="dashboard">
 
-      <table border="1" cellPadding="10">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Attendance</th>
-          </tr>
-        </thead>
+      <Sidebar />
 
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Rahul</td>
-            <td>92%</td>
-          </tr>
+      <div className="main-content">
 
-          <tr>
-            <td>2</td>
-            <td>Priya</td>
-            <td>88%</td>
-          </tr>
-        </tbody>
-      </table>
+        <div className="box">
+
+          <h2>Students List</h2>
+
+          <table>
+
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Class</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1</td>
+                <td>Rahul</td>
+                <td>CSE</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Priya</td>
+                <td>ECE</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
     </div>
   );
 }
-
-export default Students;

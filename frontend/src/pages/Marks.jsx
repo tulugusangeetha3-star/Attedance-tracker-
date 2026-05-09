@@ -1,33 +1,49 @@
-function Marks() {
+import Sidebar from "../components/Sidebar";
+
+export default function Marks() {
   return (
-    <div>
-      <h1>Marks & Performance</h1>
+    <div className="dashboard">
 
-      <table border="1" cellPadding="10">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Subject</th>
-            <th>Marks</th>
-          </tr>
-        </thead>
+      <Sidebar />
 
-        <tbody>
-          <tr>
-            <td>Rahul</td>
-            <td>Math</td>
-            <td>85</td>
-          </tr>
+      <div className="main-content">
 
-          <tr>
-            <td>Priya</td>
-            <td>Science</td>
-            <td>78</td>
-          </tr>
-        </tbody>
-      </table>
+        <div className="box">
+
+          <h2>Student Marks</h2>
+
+          <table>
+
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Marks</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Rahul</td>
+                <td>Math</td>
+                <td>85</td>
+              </tr>
+
+              <tr>
+                <td>Priya</td>
+                <td>Science</td>
+                <td>78</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
     </div>
   );
 }
-
-export default Marks;
